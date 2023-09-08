@@ -1,4 +1,4 @@
-import React , {useState}from 'react';
+import React , {useEffect, useState}from 'react';
 import Productivity from './../assets/images/productivity.png'
 import './Style/login.css'
 import Google from './../assets/images/google.jpg'
@@ -12,6 +12,21 @@ function Login(props) {
     const navigate = useNavigate();
     const [user_id , setUserID ] = useState("");
     const [password , setPassword ] = useState("");
+
+    useEffect(()=> {
+
+        toast.info('Username :- amanninave  Password :- 12345', {
+            position: "top-right",
+            autoClose: 500000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+
+    }, [] )
 
     function submitLogin(e) {
         e.preventDefault();
@@ -47,6 +62,8 @@ function Login(props) {
             });
 
     }
+
+  
     return (
         <>
         <div className='login_parent_div'>
