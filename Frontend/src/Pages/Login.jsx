@@ -1,5 +1,5 @@
 import React , {useState}from 'react';
-import Productivity from './../assets/images/Productivity.png'
+import Productivity from './../assets/images/productivity.png'
 import './Style/login.css'
 import Google from './../assets/images/google.jpg'
 import parameters from '../config';
