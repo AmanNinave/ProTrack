@@ -75,7 +75,7 @@ function Navbar(props) {
               Fill Data
             </button>
           </Link>
-          <Link to="/task">
+          {/* <Link to="/task">
             <button
               onClick={() => {
                 setActivePage("task");
@@ -84,7 +84,7 @@ function Navbar(props) {
             >
               Task
             </button>
-          </Link>
+          </Link> */}
           <Link to="/addpicker">
             <button
               onClick={() => {
