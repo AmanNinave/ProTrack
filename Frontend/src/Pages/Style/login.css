@@ -83,3 +83,17 @@
 .forgot_password  > h5 {
     color: blue;
 }
+
+.loader {
+    height: 0px;
+    margin: auto;
+}
+
+.blur-background{
+    background-color: #F3F2EF;
+    height: 100%;
+    width: 70vh;
+    position: absolute;
+    top: 20vh;
+    left: 30%;
+}

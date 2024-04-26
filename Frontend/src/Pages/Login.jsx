@@ -4,6 +4,7 @@ import './Style/login.css'
 import Google from './../assets/images/google.jpg'
 import parameters from '../config';
 import {useNavigate} from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +13,7 @@ function Login(props) {
     const navigate = useNavigate();
     const [user_id , setUserID ] = useState("");
     const [password , setPassword ] = useState("");
+    const [loading , setLoding ] = useState(false);
 
     useEffect(()=> {
 
@@ -29,6 +31,7 @@ function Login(props) {
     }, [] )
 
     function submitLogin(e) {
+        setLoding(true);
         e.preventDefault();
         const reqbody = {
             method: "POST",
@@ -42,6 +45,7 @@ function Login(props) {
         fetch(`${parameters.backend_ip}/user/login`, reqbody)
             .then((res) => { return res.json() })
             .then((res) => {
+                setLoding(false);
                 if (res.token != undefined) {
 
                     localStorage.setItem("token", JSON.stringify(res.token))
@@ -104,14 +108,15 @@ function Login(props) {
                   
                 </div>
 
-                <button  className="login_button" onClick={(e)=> {submitLogin(e)}}> Login </button>
-                <button  className=" google_button"> <img src={Google} alt="" className='google_icon' /> Continue with Google </button>
+                <button  className="login_button" onClick={(e)=> {submitLogin(e)}}> { loading ?  <ClipLoader  color="#36d7b7"  size={20} /> : "Login"} </button>
                 
+                {/* <button  className=" google_button"> <img src={Google} alt="" className='google_icon' /> Continue with Google </button> */}
                 <div className='forgot_password'>
                      <h5 >Forgot Password ? </h5>
                 </div>
 
             </div>
+
             
         </div>
 
