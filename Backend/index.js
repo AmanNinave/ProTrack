@@ -7,6 +7,7 @@ let connectToDatabase = require('./db/ConnectDatabase');
 const userRoute = require('./Routes/user.route');
 const AuthMiddleware = require('./Middleware/userAuth.middleware')
 const notificationRouter = require('./Routes/notification.route')
+const { allowCors } = require('./config');
 const PORT = process.env.PORT || 8080
 app.use(express.json());
 // const corsOptions = {
@@ -15,7 +16,7 @@ app.use(express.json());
 //     allowedHeaders: ['Content-Type', 'Authorization'], 
 //     Credentials :   true
 // }
- 
+app.use(allowCors);
 app.use(cors());
 
 
