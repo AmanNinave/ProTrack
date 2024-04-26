@@ -16,7 +16,7 @@ app.use(express.json());
 //     Credentials :   true
 // }
  
-app.use(cors(  ));
+app.use(cors());
 
 
 app.get( "/" , ( req , res ) => {
