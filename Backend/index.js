@@ -9,14 +9,14 @@ const AuthMiddleware = require('./Middleware/userAuth.middleware')
 const notificationRouter = require('./Routes/notification.route')
 const PORT = process.env.PORT || 8080
 app.use(express.json());
-const corsOptions = {
-    origin: 'https://pro-track-home.vercel.app',
-    methods: ["GET" , "POST" , "PUT" , "DELETE" , "PATCH" , "UPDATE" , "OPTIONS"], 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
-    Credentials :   true
-}
+// const corsOptions = {
+//     origin: '*',
+//     methods: ["GET" , "POST" , "PUT" , "DELETE" , "PATCH" , "UPDATE" , "OPTIONS"], 
+//     allowedHeaders: ['Content-Type', 'Authorization'], 
+//     Credentials :   true
+// }
  
-app.use(cors( corsOptions ));
+app.use(cors(  ));
 
 
 app.get( "/" , ( req , res ) => {
