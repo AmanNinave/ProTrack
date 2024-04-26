@@ -9,7 +9,13 @@ const AuthMiddleware = require('./Middleware/userAuth.middleware')
 const notificationRouter = require('./Routes/notification.route')
 const PORT = process.env.PORT || 8080
 app.use(express.json());
-app.use(cors( ));
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+ 
+app.use(cors( corsOptions ));
     // {
     //     origin : [ "https://pro-track-one.vercel.app"],
     //     methods : [ "POST" , "GET" , "PUT" , "DELETE" , "PATCH"],
