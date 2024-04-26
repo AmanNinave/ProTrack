@@ -5,7 +5,6 @@ import downArrow from "./../assets/images/arrow-down-blue.png";
 import Man from "./../assets/images/man.png";
 import "./Style/navbar.css";
 import Power from "./../assets/images/power-off.png";
-
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +12,7 @@ function Navbar(props) {
   let currentURL = window.location.href;
   currentURL = currentURL.split("/");
   currentURL = currentURL[currentURL.length - 1];
-
+  currentURL = currentURL == "" ? "home" : currentURL ;
   const [activePage, setActivePage] = useState(currentURL);
   const [userStatus, setUserStatus] = useState(false);
   const navigate = useNavigate();
