@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 function PrivateRoute({ children }) {
     let dta = JSON.parse( localStorage.getItem("userDetails"))  || "";
     return (
-        dta != "" ? children : < Navigate to= '/'/>
+        dta != "" ? children : < Navigate to= '/login'/>
     );
 }
 

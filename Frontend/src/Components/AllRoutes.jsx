@@ -12,8 +12,8 @@ function AllRoutes(props) {
     return (
         <>
             <Routes>
-                <Route path='/' element={ <Login/>}></Route>
-                <Route path='/home'  element={ <PrivateRoute> <Navbar/> <Home/> </PrivateRoute>}> </Route>
+                <Route path='/login' element={ <Login/>}></Route>
+                <Route path='/'  element={ <PrivateRoute> <Navbar/> <Home/> </PrivateRoute>}> </Route>
                 <Route path='/dashboard'  element={ <PrivateRoute><Navbar/>  <Dashboard/> </PrivateRoute> }  ></Route>
                 <Route path='/fill' element={ <PrivateRoute> <Navbar/><Filldata/> </PrivateRoute> }></Route>
                 <Route path='/task' element={<PrivateRoute> <Navbar/><Task/> </PrivateRoute> }></Route>

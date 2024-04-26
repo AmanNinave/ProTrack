@@ -22,13 +22,13 @@ function Navbar(props) {
 
   function logout() {
     localStorage.clear();
-    navigate("/");
+    navigate("/login");
   }
  
   return (
     <>
       <div id="nav_parent">
-        <Link to="/home">
+        <Link to="/">
           <div
             onClick={() => {
               setActivePage("home");
@@ -42,7 +42,7 @@ function Navbar(props) {
         </Link>
 
         <div className="nav_buttons">
-          <Link to="/home">
+          <Link to="/">
             <button
               onClick={() => {
                 setActivePage("home");

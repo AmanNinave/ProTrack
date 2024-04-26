@@ -50,7 +50,7 @@ function Login(props) {
 
                     localStorage.setItem("token", JSON.stringify(res.token))
                     localStorage.setItem('userDetails' , JSON.stringify(res));
-                    navigate('/home');
+                    navigate('/');
                 }else {
                     toast.info('Wrong User ID or Password !', {
                         position: "top-right",
@@ -108,7 +108,7 @@ function Login(props) {
                   
                 </div>
 
-                <button  className="login_button" onClick={(e)=> {submitLogin(e)}}> { loading ?  <ClipLoader  color="#36d7b7"  size={20} /> : "Login"} </button>
+                <button disabled={loading} className="login_button" onClick={(e)=> {submitLogin(e)}}> { loading ?  <ClipLoader  color="#36d7b7"  size={20} /> : "Login"} </button>
                 
                 {/* <button  className=" google_button"> <img src={Google} alt="" className='google_icon' /> Continue with Google </button> */}
                 <div className='forgot_password'>
