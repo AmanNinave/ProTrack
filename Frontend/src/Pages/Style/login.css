@@ -97,3 +97,11 @@
     top: 20vh;
     left: 30%;
 }
+
+@media screen and (max-width: 600px) {
+    .login_main_div {
+        width: 25rem;
+        height: 25rem;
+    }
+    
+}

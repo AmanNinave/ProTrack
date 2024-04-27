@@ -15,7 +15,7 @@ scrollbar-width: none;  /* Firefox */
 .add_icon_dash  {
     position: fixed;
     bottom: 20px;
-    left: 370px;
+    left: 375px;
 }
 .add_icon_dash > img {
     width: 50px;

@@ -39,7 +39,13 @@ function Home(props) {
       <div>
         
 
-        <div className="home_left_dummy_box"></div>
+        {/* <div className="home_left_dummy_box"></div> */}
+
+        <div className="home_left_box">
+
+          <ManpowerStatus Shift_list={Shift_list} task_list={task_list}  />
+         
+        </div>
 
         <div className="home_right_box">
           {Shift_list.map((elem, index) => {
@@ -47,11 +53,6 @@ function Home(props) {
           })}
         </div>
 
-        <div className="home_left_box">
-
-          <ManpowerStatus Shift_list={Shift_list} task_list={task_list}  />
-         
-        </div>
 
 
       </div>

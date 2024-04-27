@@ -67,15 +67,7 @@ function Dashboard(props) {
   return (
     <div id="home_parent_box">
       <div>
-        <div className="home_left_dummy_box"></div>
-
-        <div className="home_right_box">
-          {pickerData.map((elem, index) => {
-            return (
-              <Dashboard_Child1 pickerObj={ elem } key={index + 1} />
-            );
-          })}
-        </div>
+        {/* <div className="home_left_dummy_box"></div> */}
 
         <div className="home_left_box dash_left_box">
           { notificationsArray.length > 0 && 
@@ -89,6 +81,15 @@ function Dashboard(props) {
           { showModel && <div className="noti_dash_model"><Dash_Model handleSubmit={handleSubmit} setShowModel={setShowModel} /></div>}
           <div onClick={()=> {setShowModel(true)}} className="add_icon_dash"><img src={Add} alt="" /></div>
         </div>
+        
+        <div className="home_right_box">
+          {pickerData.map((elem, index) => {
+            return (
+              <Dashboard_Child1 pickerObj={ elem } key={index + 1} />
+            );
+          })}
+        </div>
+
       </div>
     </div>
   );
